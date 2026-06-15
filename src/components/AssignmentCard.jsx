@@ -4,7 +4,7 @@ const isAvailable = (value) => Boolean(value && value !== 'Sẽ cập nhật sau
 
 export default function AssignmentCard({ project, onSelect }) {
   return (
-    <article className="group flex min-h-[540px] flex-col overflow-hidden rounded-xl border border-border-light bg-white shadow-[0_12px_32px_rgba(247,168,161,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-peach hover:shadow-[0_18px_40px_rgba(247,168,161,0.18)]">
+    <article className="reveal hover-lift group flex min-h-[540px] flex-col overflow-hidden rounded-xl border border-border-light bg-white shadow-[0_12px_32px_rgba(247,168,161,0.08)]">
       <div className="relative aspect-[4/3] overflow-hidden bg-paper">
         {isAvailable(project.evidenceImg) ? <img src={project.evidenceImg} alt={`Minh chứng ${project.title}`} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" /> : <div className="flex h-full items-center justify-center text-muted-dark"><ImageIcon size={30} /></div>}
         <span className="dark-label-box absolute left-4 top-4">Assignment {String(project.id).padStart(2, '0')}</span>

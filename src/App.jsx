@@ -6,6 +6,7 @@ import EvidenceTable from './components/EvidenceTable';
 import RubricTable from './components/RubricTable';
 import Summary from './components/Summary';
 import { portfolioData } from './data/portfolioData';
+import useScrollReveal from './hooks/useScrollReveal';
 
 const tabTitles = {
   home: 'Overview / Tổng quan',
@@ -18,6 +19,7 @@ const tabTitles = {
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  useScrollReveal(activeTab);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });

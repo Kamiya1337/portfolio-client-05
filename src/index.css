@@ -6,7 +6,7 @@
 
 @layer base {
   * { box-sizing: border-box; }
-  html { min-width: 320px; overflow-x: clip; background: #FFF8F5; }
+  html { min-width: 320px; overflow-x: clip; scroll-behavior: smooth; background: #FFF8F5; }
   body { margin: 0; min-width: 320px; overflow-x: clip; background: #FFF8F5; color: #241B1B; font-family: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
   button, a { -webkit-tap-highlight-color: transparent; }
   button:focus-visible, a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
@@ -20,9 +20,9 @@
   .page-title { @apply mt-4 max-w-4xl font-display text-[clamp(2.8rem,6vw,5rem)] font-bold leading-[1.03] tracking-[-0.035em] text-charcoal; }
   .page-copy { @apply mt-7 max-w-3xl border-l-2 border-peach pl-5 text-lg leading-8 text-muted-dark; }
   .editorial-card { @apply rounded-xl border border-border-light bg-white shadow-[0_12px_32px_rgba(247,168,161,0.08)]; }
-  .button-primary { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-coral px-5 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-white transition-all hover:-translate-y-0.5 hover:bg-rose hover:shadow-[0_10px_24px_rgba(231,111,122,0.24)]; }
+  .button-primary { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-coral px-5 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-white shadow-[0_8px_20px_rgba(231,111,122,0.14)] transition-all hover:-translate-y-0.5 hover:bg-rose hover:shadow-[0_10px_24px_rgba(231,111,122,0.24)]; }
   .button-secondary { @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-lg border border-border-light bg-white px-4 py-2 text-[10px] font-bold uppercase tracking-[0.1em] text-charcoal transition-all hover:border-peach hover:bg-blush; }
-  .button-light { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-coral px-5 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-white transition-all hover:-translate-y-0.5 hover:bg-rose; }
+  .button-light { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-coral px-5 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-white shadow-[0_8px_20px_rgba(231,111,122,0.14)] transition-all hover:-translate-y-0.5 hover:bg-rose hover:shadow-[0_10px_24px_rgba(231,111,122,0.22)]; }
   .button-dark-outline { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-white/30 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-white/10; }
   .icon-button-dark { @apply inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border-light bg-white text-charcoal transition-colors hover:border-peach hover:bg-blush; }
   .dark-label-box { @apply inline-flex rounded-full bg-obsidian/90 px-3 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-white; }
@@ -31,10 +31,35 @@
   .ledger-link { @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-lg border border-border-light bg-white px-3 py-2 text-[10px] font-bold uppercase tracking-[0.08em] text-charcoal transition-colors hover:border-peach hover:bg-blush; }
   .ledger-status { @apply inline-flex items-center gap-1.5 rounded-full border border-border-light bg-paper px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.08em] text-muted-dark; }
   .ledger-status-complete { @apply border-peach bg-blush text-charcoal; }
+  .soft-peach-glow { box-shadow: 0 14px 36px rgba(247, 168, 161, 0.16), 0 4px 14px rgba(231, 111, 122, 0.08); }
+  .hover-lift { transition: transform 300ms ease, border-color 300ms ease, box-shadow 300ms ease; }
+  .hover-lift:hover { transform: translateY(-3px); border-color: #F7A8A1; box-shadow: 0 16px 38px rgba(247, 168, 161, 0.18); }
+  .section-anchor { scroll-margin-top: 6rem; }
 }
 
+.reveal-ready .reveal {
+  opacity: 0;
+  translate: 0 16px;
+  transition: opacity 620ms ease, translate 620ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, translate;
+}
+
+.reveal-ready .reveal.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.reveal-stagger > .reveal:nth-child(2) { transition-delay: 70ms; }
+.reveal-stagger > .reveal:nth-child(3) { transition-delay: 140ms; }
+.reveal-stagger > .reveal:nth-child(4) { transition-delay: 210ms; }
+.reveal-stagger > .reveal:nth-child(5) { transition-delay: 280ms; }
+.reveal-stagger > .reveal:nth-child(6) { transition-delay: 350ms; }
+
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .reveal, .reveal.is-visible { opacity: 1 !important; translate: none !important; transform: none !important; transition: none !important; }
+  .hover-lift:hover { transform: none !important; }
 }
 
 @media print {
@@ -46,6 +71,7 @@
   .editorial-card, article, section, table { background: #fff !important; color: #000 !important; border-color: #bbb !important; }
   a { color: #000 !important; text-decoration: underline !important; }
   *, *::before, *::after { animation: none !important; transition: none !important; transform: none !important; box-shadow: none !important; filter: none !important; backdrop-filter: none !important; }
+  .reveal { opacity: 1 !important; translate: none !important; }
   video { display: none !important; }
   article, tr, section { break-inside: avoid; page-break-inside: avoid; }
 }

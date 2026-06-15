@@ -15,7 +15,7 @@ export default function HomeTab({ setActiveTab }) {
     <div className="bg-ivory">
       <Hero student={student} setActiveTab={setActiveTab} />
       <section className="px-5 pb-20 sm:px-8 xl:px-16 xl:pb-24">
-        <div className="editorial-card mx-auto grid max-w-[1280px] gap-8 bg-paper px-7 py-10 md:grid-cols-12 md:gap-10 md:px-10 md:py-12">
+        <div className="editorial-card reveal mx-auto grid max-w-[1280px] gap-8 bg-paper px-7 py-10 md:grid-cols-12 md:gap-10 md:px-10 md:py-12">
           <div className="md:col-span-4">
             <p className="editorial-label">ĐỊNH VỊ CÁ NHÂN</p>
             <h2 className="mt-4 font-display text-4xl font-semibold text-charcoal sm:text-5xl">Digital Catalyst</h2>
@@ -33,9 +33,9 @@ export default function HomeTab({ setActiveTab }) {
             <div className="lg:col-span-7"><p className="editorial-label">Portfolio Navigation</p><h2 className="mt-4 font-display text-5xl font-semibold sm:text-6xl">Module Explorer</h2></div>
             <p className="max-w-md text-sm leading-7 text-muted-dark lg:col-span-5 lg:justify-self-end">Navigate the academic journey through coursework, supporting evidence, assessment criteria, and reflection.</p>
           </div>
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="reveal-stagger mt-14 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {modules.map((item, index) => (
-              <button type="button" key={item.number} onClick={() => setActiveTab(item.tab)} className={`group min-h-72 rounded-xl border border-border-light bg-white p-7 text-left shadow-[0_12px_32px_rgba(247,168,161,0.06)] transition-all hover:-translate-y-1 hover:border-peach hover:shadow-[0_16px_36px_rgba(247,168,161,0.16)] ${index > 1 ? 'xl:translate-y-6' : ''}`}>
+              <button type="button" key={item.number} onClick={() => setActiveTab(item.tab)} className={`reveal hover-lift group min-h-72 rounded-xl border border-border-light bg-white p-7 text-left shadow-[0_12px_32px_rgba(247,168,161,0.06)] ${index > 1 ? 'xl:translate-y-6' : ''}`}>
                 <span className="font-display text-6xl font-semibold text-blush">{item.number}</span>
                 <div className="mt-16 flex items-start justify-between gap-4"><div><h3 className="font-display text-2xl font-semibold">{item.title}</h3><p className="mt-3 text-sm leading-6 text-muted-dark">{item.copy}</p></div><ArrowUpRight size={17} className="mt-1 text-rose transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></div>
               </button>
@@ -44,7 +44,7 @@ export default function HomeTab({ setActiveTab }) {
         </div>
       </section>
       <section className="px-5 pb-24 pt-8 sm:px-8 xl:px-16 xl:pb-28 xl:pt-14">
-        <div className="mx-auto flex min-h-80 max-w-[1280px] items-center justify-center rounded-[1.5rem] bg-[#8B4D48] p-10 text-center text-white shadow-[0_20px_50px_rgba(139,77,72,0.18)]">
+        <div className="reveal mx-auto flex min-h-80 max-w-[1280px] items-center justify-center rounded-[1.5rem] bg-[#8B4D48] p-10 text-center text-white shadow-[0_20px_50px_rgba(139,77,72,0.18)]">
           <div><p className="dark-editorial-label">Academic Framework</p><p className="mt-6 max-w-4xl font-display text-3xl font-semibold leading-tight sm:text-5xl">Strategy becomes credible when it is documented, reviewed, and reflected upon.</p><div className="mx-auto mt-8 h-1 w-10 rounded-full bg-peach" /></div>
         </div>
       </section>

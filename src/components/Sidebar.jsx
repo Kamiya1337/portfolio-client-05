@@ -44,7 +44,7 @@ export default function Sidebar({ activeTab, setActiveTab, isMobileOpen, setIsMo
             const Icon = item.icon;
             const isActive = item.id === activeTab;
             return (
-              <button type="button" key={item.id} onClick={() => selectTab(item.id)} className={`group relative flex w-full items-center gap-3 rounded-lg px-4 py-3.5 text-left text-[11px] font-bold uppercase tracking-[0.13em] transition-all ${isActive ? 'bg-white/5 text-peach' : 'text-white/70 hover:bg-white/5 hover:text-white'}`}>
+              <button type="button" key={item.id} onClick={() => selectTab(item.id)} className={`group relative flex w-full items-center gap-3 rounded-lg px-4 py-3.5 text-left text-[11px] font-bold uppercase tracking-[0.13em] transition-all ${isActive ? 'bg-white/5 text-peach shadow-[inset_0_0_22px_rgba(247,168,161,0.12),0_8px_24px_rgba(231,111,122,0.10)]' : 'text-white/70 hover:bg-white/5 hover:text-white'}`}>
                 {isActive && <span className="absolute -right-3 top-1/2 h-7 w-1 -translate-y-1/2 rounded-l-full bg-peach" />}
                 <Icon size={17} strokeWidth={1.7} />
                 <span>{String(index + 1).padStart(2, '0')} {item.label}</span>

@@ -24,7 +24,7 @@ export default function AssignmentDetail({ project, onBack, previewData, onPrevi
       <PreviewModal previewData={previewData} onClose={onClosePreview} />
 
       <button type="button" onClick={onBack} className="button-secondary"><ArrowLeft size={17} /> Quay lại danh sách</button>
-      <article className="editorial-card mx-auto mt-8 max-w-[1280px] overflow-hidden">
+      <article className="editorial-card reveal mx-auto mt-8 max-w-[1280px] overflow-hidden">
         <header className="grid gap-8 border-b border-border-light p-7 lg:grid-cols-12 lg:p-12">
           <div className="lg:col-span-3"><p className="editorial-label">Assignment {String(project.id).padStart(2, '0')}</p><p className="mt-2 text-sm text-muted-dark">{project.chapter}</p></div>
           <div className="lg:col-span-8"><h1 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-[1.02] tracking-[-0.035em]">{project.title}</h1><p className="mt-6 max-w-3xl text-base leading-8 text-muted-dark">{project.shortDesc}</p></div>
