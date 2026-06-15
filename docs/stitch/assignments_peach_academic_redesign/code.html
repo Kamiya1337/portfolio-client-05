@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #d8c2bf;
+      border-radius: 10px;
+    }
+    .editorial-border {
+      border-bottom: 1px solid #F4C8C0;
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-secondary-fixed-variant": "#7a2d30",
+                  "primary": "#8b4d48",
+                  "inverse-surface": "#382e2e",
+                  "on-primary-container": "#753b36",
+                  "on-surface-variant": "#534342",
+                  "on-primary-fixed": "#380c0a",
+                  "surface": "#fff8f7",
+                  "outline": "#857371",
+                  "surface-container-highest": "#f0dfde",
+                  "secondary-container": "#fe9696",
+                  "tertiary-fixed": "#ffdadb",
+                  "secondary": "#984446",
+                  "error": "#ba1a1a",
+                  "secondary-fixed": "#ffdad9",
+                  "on-tertiary-fixed": "#40000d",
+                  "inverse-primary": "#ffb3ad",
+                  "surface-container-low": "#fff0f0",
+                  "secondary-fixed-dim": "#ffb3b2",
+                  "on-tertiary-fixed-variant": "#832331",
+                  "on-secondary-fixed": "#3f0209",
+                  "surface-container": "#fceae9",
+                  "on-surface": "#221919",
+                  "surface-dim": "#e7d6d6",
+                  "primary-container": "#f7a8a1",
+                  "on-tertiary": "#ffffff",
+                  "tertiary-container": "#ffa3a9",
+                  "on-tertiary-container": "#892836",
+                  "surface-tint": "#8b4d48",
+                  "primary-fixed-dim": "#ffb3ad",
+                  "outline-variant": "#d8c2bf",
+                  "on-secondary": "#ffffff",
+                  "on-primary": "#ffffff",
+                  "surface-bright": "#fff8f7",
+                  "on-error": "#ffffff",
+                  "inverse-on-surface": "#ffedec",
+                  "on-error-container": "#93000a",
+                  "error-container": "#ffdad6",
+                  "surface-variant": "#f0dfde"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "margin-mobile": "16px",
+                  "section-gap": "80px",
+                  "stack-sm": "8px",
+                  "margin-desktop": "64px",
+                  "container-max": "1280px",
+                  "gutter": "24px",
+                  "stack-md": "16px",
+                  "stack-lg": "24px"
+          },
+          "fontFamily": {
+                  "headline-sm": ["Playfair Display"],
+                  "label-caps": ["\"Source Sans 3\""],
+                  "display-lg-mobile": ["Playfair Display"],
+                  "display-lg": ["Playfair Display"],
+                  "body-lg": ["\"Source Sans 3\""],
+                  "label-sm": ["\"Source Sans 3\""],
+                  "headline-md": ["Playfair Display"],
+                  "body-md": ["\"Source Sans 3\""]
+          },
+          "fontSize": {
+                  "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                  "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                  "display-lg-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                  "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                  "label-sm": ["13px", {"lineHeight": "18px", "fontWeight": "600"}],
+                  "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                  "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- Side Navigation Bar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-on-primary-container border-r border-outline-variant flex flex-col py-stack-lg z-50">
+<!-- Brand Anchor -->
+<div class="px-6 mb-12">
+<h1 class="font-headline-sm text-headline-sm text-surface-container-lowest leading-tight">Academic Portfolio</h1>
+<p class="font-label-caps text-label-caps text-primary-fixed-dim mt-1 opacity-70">Excellence in Research</p>
+</div>
+<!-- Navigation Items -->
+<nav class="flex-1 space-y-2">
+<a class="flex items-center space-x-3 text-surface-container-lowest opacity-80 hover:opacity-100 pl-4 py-3 transition-colors hover:bg-primary-fixed-variant/10" href="#">
+<span class="material-symbols-outlined">folder_special</span>
+<span class="font-label-caps text-label-caps">Portfolio</span>
+</a>
+<!-- Active Tab: Coursework (Assignments) -->
+<a class="flex items-center space-x-3 text-primary-container font-bold border-r-4 border-primary-container pl-4 py-3 bg-primary-fixed-variant/5" href="#">
+<span class="material-symbols-outlined">school</span>
+<span class="font-label-caps text-label-caps">Coursework</span>
+</a>
+<a class="flex items-center space-x-3 text-surface-container-lowest opacity-80 hover:opacity-100 pl-4 py-3 transition-colors hover:bg-primary-fixed-variant/10" href="#">
+<span class="material-symbols-outlined">assignment_turned_in</span>
+<span class="font-label-caps text-label-caps">Evidence</span>
+</a>
+<a class="flex items-center space-x-3 text-surface-container-lowest opacity-80 hover:opacity-100 pl-4 py-3 transition-colors hover:bg-primary-fixed-variant/10" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label-caps text-label-caps">Reflections</span>
+</a>
+<a class="flex items-center space-x-3 text-surface-container-lowest opacity-80 hover:opacity-100 pl-4 py-3 transition-colors hover:bg-primary-fixed-variant/10" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-caps text-label-caps">Profile</span>
+</a>
+</nav>
+<!-- Sidebar CTA -->
+<div class="px-4 mt-auto">
+<button class="w-full py-4 px-6 bg-primary-container text-on-primary-container font-label-caps text-label-caps rounded-xl transition-transform scale-95 active:scale-90 shadow-lg shadow-primary-container/20">
+        Download CV
+      </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen flex flex-col">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-40 bg-surface/80 backdrop-blur-md border-b border-outline-variant px-margin-desktop py-stack-md flex justify-between items-center w-full">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Portfolio Index</h2>
+<div class="flex items-center space-x-6">
+<div class="relative hidden lg:block">
+<input class="bg-surface-container-low border border-outline-variant rounded-full py-2 px-10 text-label-sm focus:ring-2 focus:ring-primary-container focus:border-primary outline-none transition-all w-64" placeholder="Search archive..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-body-md">search</span>
+</div>
+<div class="flex space-x-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors opacity-80 active:opacity-100">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors opacity-80 active:opacity-100">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Editorial Header Section -->
+<section class="px-margin-desktop pt-16 pb-12">
+<div class="max-w-4xl">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.2em] block mb-4 uppercase">Curated Portfolio Archive</span>
+<h1 class="font-display-lg text-display-lg text-on-surface leading-tight mb-8">Applied learning,<br/>documented with care.</h1>
+<div class="w-24 h-1 bg-primary-container mb-8"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+          Sáu bài tập học phần được trình bày như một hồ sơ học thuật, giữ nguyên báo cáo, minh chứng và liên kết tài nguyên thực tế. Mỗi tác phẩm là một bước tiến trong hành trình tư duy sáng tạo.
+        </p>
+</div>
+</section>
+<!-- Grid Layout for Assignments -->
+<section class="px-margin-desktop pb-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Assignment Card 1 -->
+<article class="group bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-[0px_12px_32px_rgba(247,168,161,0.12)]">
+<div class="relative aspect-video overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A clean top-down view of a designer's desk with a laptop displaying a modern UI design, a notebook with tidy handwriting, and a cup of coffee. The lighting is soft and warm, capturing a peaceful academic working environment in a high-key light-mode style with soft peach and ivory tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdnScShA5MrTTgQPLFqXt3yJE834UWjTF3I6k8xXg9qQHrzT0lEyKtgIl5fm1WSkOAb20i6-5-p3aR5iUr2z3ivtBhYaK8T51erG7A7FIZy9GmB9YXBHrpgcXKWu0AMvw5Z5iS_MU6BC-mwHvZkNo1bibjvEYOfilSw9582KVPzNdtVyq6J0jKps7HMbXq3nZ8FqsiP7UId9nOsH2MYLvoajPxTQqauwFvVsn0rR7kEMn7Zr23bQYDz404mDVz1Qv-EkQEaikwn2mi"/>
+<div class="absolute top-4 left-4 bg-on-surface/90 text-surface px-3 py-1 rounded-full font-label-caps text-[10px]">ASSIGNMENT 01</div>
+</div>
+<div class="p-stack-lg flex-1 flex flex-col">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-surface-container-low text-on-secondary-fixed-variant rounded-full font-label-sm text-label-sm">Marketing Strategy</span>
+<span class="px-3 py-1 bg-surface-container-low text-on-secondary-fixed-variant rounded-full font-label-sm text-label-sm">Chapter 1 &amp; 2</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2 group-hover:text-primary transition-colors">Phân tích thị trường mục tiêu</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3">
+              Nghiên cứu chi tiết về hành vi người tiêu dùng Gen Z trong ngành hàng F&amp;B tại Việt Nam, tập trung vào yếu tố bền vững.
+            </p>
+<div class="mt-auto space-y-3">
+<button class="w-full py-3 px-4 bg-[#F28C8C] hover:bg-[#E76F7A] text-white rounded-lg font-label-caps text-label-caps transition-colors shadow-sm">
+                View Case Study
+              </button>
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center space-x-2 py-2 px-3 border border-outline-variant hover:bg-surface-container rounded-lg font-label-sm text-label-sm text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]">description</span>
+<span>Report</span>
+</button>
+<button class="flex items-center justify-center space-x-2 py-2 px-3 border border-outline-variant hover:bg-surface-container rounded-lg font-label-sm text-label-sm text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]">cloud</span>
+<span>Drive</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Assignment Card 2 -->
+<article class="group bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-[0px_12px_32px_rgba(247,168,161,0.12)]">
+<div class="relative aspect-video overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A professional collaborative workspace with a large whiteboard filled with colorful sticky notes and mind maps. Soft natural light streams in from a window, illuminating the room in warm rose and ivory tones. The aesthetic is sophisticated editorial, focusing on the creative academic process and collaborative research." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnh5WOuCn9w4N8alVXiVmn6OsXt2Nur9_YUfYYnJUgn2UnxsURTY7awMgKVqdoF_ot3F31zXGq6tm-_6fvzqaMpBLtUA3lYyuNe9cD_AkOHcVt0bOz5z6VhMZpRjoOPwXNeqjEunc7K5O_XoXBHOtfEAT59awo7nWTYja_Ioj2JI_1638RVzXIjj4yppViwbegaqzXSgyRQK-qiXf7UOMNYD2zyAjsIDRX3M6ZngUIaKYWN3CV5utwqon5palH22_tiR06-MfzPgaS"/>
+<div class="absolute top-4 left-4 bg-on-surface/90 text-surface px-3 py-1 rounded-full font-label-caps text-[10px]">ASSIGNMENT 02</div>
+</div>
+<div class="p-stack-lg flex-1 flex flex-col">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-surface-container-low text-on-secondary-fixed-variant rounded-full font-label-sm text-label-sm">Brand Identity</span>
+<span class="px-3 py-1 bg-surface-container-low text-on-secondary-fixed-variant rounded-full font-label-sm text-label-sm">Chapter 3</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2 group-hover:text-primary transition-colors">Xây dựng hệ thống nhận diện</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3">
+              Thiết kế bộ nhận diện thương hiệu cho một start-up về giáo dục, bao gồm Logo, Typography và các ấn phẩm truyền thông.
+            </p>
+<div class="mt-auto space-y-3">
+<button class="w-full py-3 px-4 bg-[#F28C8C] hover:bg-[#E76F7A] text-white rounded-lg font-label-caps text-label-caps transition-colors shadow-sm">
+                View Case Study
+              </button>
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center space-x-2 py-2 px-3 border border-outline-variant hover:bg-surface-container rounded-lg font-label-sm text-label-sm text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]">description</span>
+<span>Report</span>
+</button>
+<button class="flex items-center justify-center space-x-2 py-2 px-3 border border-outline-variant hover:bg-surface-container rounded-lg font-label-sm text-label-sm text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]">cloud</span>
+<span>Drive</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Assignment Card 3 -->
+<article class="group bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-[0px_12px_32px_rgba(247,168,161,0.12)]">
+<div class="relative aspect-video overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A minimalist layout of an academic journal open on a wooden table, showing elegant serif typography and high-quality photography. The scene is bathed in bright, soft sunlight, creating a high-end editorial atmosphere with a color palette of pristine white and subtle coral pink accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPD8ioLMlNf_8H7RcOrtwVwyFCdezSqt-k1JaThzS_u10gV-BSrK88F_BxiGPCRCZOTez7fdu3TrsZ855Ink3OmIWSmNlrIE8kA9utuZO7DaC36P6Z0UKtco_0waOv4MREO7CC4JHhcR-rrQ5-UFiqdy9TPCGlYRf7kQrhy2XMbmWM1ipuJQBdj6Hn8kWq8pG6YDZJ6L5RGUp45RvTku2Z8mD8r7S6onMxc8dVFYb8h3qxNIr7rk3_ScLw1ZTO5WH2p15uISbWGFu1"/>
+<div class="absolute top-4 left-4 bg-on-surface/90 text-surface px-3 py-1 rounded-full font-label-caps text-[10px]">ASSIGNMENT 03</div>
+</div>
+<div class="p-stack-lg flex-1 flex flex-col">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-surface-container-low text-on-secondary-fixed-variant rounded-full font-label-sm text-label-sm">Digital Analytics</span>
+<span class="px-3 py-1 bg-surface-container-low text-on-secondary-fixed-variant rounded-full font-label-sm text-label-sm">Final Project</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2 group-hover:text-primary transition-colors">Tối ưu hóa kênh truyền thông</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3">
+              Phân tích dữ liệu thực tế từ chiến dịch social media để đưa ra các đề xuất tối ưu hóa tỉ lệ chuyển đổi thông qua Google Analytics.
+            </p>
+<div class="mt-auto space-y-3">
+<button class="w-full py-3 px-4 bg-[#F28C8C] hover:bg-[#E76F7A] text-white rounded-lg font-label-caps text-label-caps transition-colors shadow-sm">
+                View Case Study
+              </button>
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center space-x-2 py-2 px-3 border border-outline-variant hover:bg-surface-container rounded-lg font-label-sm text-label-sm text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]">description</span>
+<span>Report</span>
+</button>
+<button class="flex items-center justify-center space-x-2 py-2 px-3 border border-outline-variant hover:bg-surface-container rounded-lg font-label-sm text-label-sm text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]">cloud</span>
+<span>Drive</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Footer -->
+<footer class="mt-auto bg-surface-container-low border-t border-outline-variant px-margin-desktop py-stack-lg flex justify-between items-center w-full">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-secondary mb-1">Portfolio Archive</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-75">© 2024 Academic Excellence Portfolio. All rights reserved.</p>
+</div>
+<div class="flex space-x-8">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary underline-offset-4 transition-all" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary underline-offset-4 transition-all" href="#">Institutional Access</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface hover:underline decoration-primary underline-offset-4 transition-all" href="#">Contact</a>
+</div>
+</footer>
+</main>
+<!-- Interactive Shader Background for atmospheric feel -->
+<div class="fixed inset-0 pointer-events-none -z-10 opacity-30">
+
+</div>
+<script>
+    // Micro-interaction for buttons
+    document.querySelectorAll('button').forEach(button => {
+      button.addEventListener('mousedown', () => {
+        button.style.transform = 'scale(0.98)';
+      });
+      button.addEventListener('mouseup', () => {
+        button.style.transform = 'scale(1)';
+      });
+      button.addEventListener('mouseleave', () => {
+        button.style.transform = 'scale(1)';
+      });
+    });
+
+    // Simple scroll reveal for cards
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('article').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+      observer.observe(card);
+    });
+  </script>
+</body></html>

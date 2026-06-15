@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Sans+3:wght@400;600;700&display=swap&subset=vietnamese');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { min-width: 320px; overflow-x: clip; background: #FFF8F5; }
+  body { margin: 0; min-width: 320px; overflow-x: clip; background: #FFF8F5; color: #241B1B; font-family: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  button:focus-visible, a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+  ::selection { background: #F7A8A1; color: #241B1B; }
+}
+
+@layer components {
+  .editorial-label { @apply text-[11px] font-bold uppercase tracking-[0.16em] text-rose; }
+  .dark-editorial-label { @apply text-[10px] font-bold uppercase tracking-[0.16em] text-peach; }
+  .page-intro { @apply mx-auto max-w-[1280px] px-5 pb-12 pt-14 sm:px-8 md:pb-16 md:pt-20 xl:px-16; }
+  .page-title { @apply mt-4 max-w-4xl font-display text-[clamp(2.8rem,6vw,5rem)] font-bold leading-[1.03] tracking-[-0.035em] text-charcoal; }
+  .page-copy { @apply mt-7 max-w-3xl border-l-2 border-peach pl-5 text-lg leading-8 text-muted-dark; }
+  .editorial-card { @apply rounded-xl border border-border-light bg-white shadow-[0_12px_32px_rgba(247,168,161,0.08)]; }
+  .button-primary { @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-coral px-5 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-white transition-all hover:-translate-y-0.5 hover:bg-rose hover:shadow-[0_10px_24px_rgba(231,111,122,0.24)]; }
+  .button-secondary { @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-lg border border-border-light bg-white px-4 py-2 text-[10px] font-bold uppercase tracking-[0.1em] text-charcoal transition-all hover:border-peach hover:bg-blush; }
+  .button-light { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-coral px-5 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-white transition-all hover:-translate-y-0.5 hover:bg-rose; }
+  .button-dark-outline { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-white/30 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-white/10; }
+  .icon-button-dark { @apply inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border-light bg-white text-charcoal transition-colors hover:border-peach hover:bg-blush; }
+  .dark-label-box { @apply inline-flex rounded-full bg-obsidian/90 px-3 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-white; }
+  .card-resource-link { @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-lg border border-border-light bg-white px-3 py-2 text-[10px] font-bold uppercase tracking-[0.1em] text-muted-dark transition-colors hover:border-peach hover:bg-blush hover:text-charcoal; }
+  .status-muted { @apply inline-flex rounded-full border border-border-light bg-white px-3 py-1 text-[9px] font-bold uppercase tracking-[0.1em] text-muted-dark; }
+  .ledger-link { @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-lg border border-border-light bg-white px-3 py-2 text-[10px] font-bold uppercase tracking-[0.08em] text-charcoal transition-colors hover:border-peach hover:bg-blush; }
+  .ledger-status { @apply inline-flex items-center gap-1.5 rounded-full border border-border-light bg-paper px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.08em] text-muted-dark; }
+  .ledger-status-complete { @apply border-peach bg-blush text-charcoal; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+@media print {
+  @page { margin: 10mm; }
+  html, body, #root { width: 100%; height: auto !important; overflow: visible !important; background: #fff !important; color: #000 !important; }
+  .portfolio-app { display: block !important; min-height: auto !important; background: #fff !important; color: #000 !important; }
+  .portfolio-mobile-header, .portfolio-mobile-overlay, .portfolio-sidebar, .portfolio-topbar, .site-footer { display: none !important; }
+  .portfolio-main { margin-left: 0 !important; min-width: 0 !important; }
+  .editorial-card, article, section, table { background: #fff !important; color: #000 !important; border-color: #bbb !important; }
+  a { color: #000 !important; text-decoration: underline !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; transform: none !important; box-shadow: none !important; filter: none !important; backdrop-filter: none !important; }
+  video { display: none !important; }
+  article, tr, section { break-inside: avoid; page-break-inside: avoid; }
+}
