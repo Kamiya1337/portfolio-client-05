@@ -22,7 +22,9 @@ export default function HomeTab({ setActiveTab }) {
             <p className="mt-5 text-xs font-bold uppercase tracking-[0.12em] text-muted-dark">Data-driven Thinking × Digital Creativity</p>
           </div>
           <div className="border-t border-border-light pt-7 md:col-span-8 md:border-l md:border-t-0 md:pl-10 md:pt-0">
-            <p className="max-w-3xl text-base leading-8 text-charcoal">Là một Marketer tương lai, em định vị mình là một &quot;Digital Catalyst&quot; - người thúc đẩy sự thay đổi thông qua dữ liệu và sáng tạo kỹ thuật số. Bản sắc của em nằm ở điểm giao thoa giữa Tư duy Phân tích Dữ liệu (Data-driven) và Sức sáng tạo Không giới hạn (Digital Creativity). Em biến những con số khô khan thành thông điệp chạm đến cảm xúc, và dùng công nghệ làm đòn bẩy để tối ưu hóa trải nghiệm khách hàng, biến những ý tưởng táo bạo thành kết quả kinh doanh thực tế.</p>
+            <p className="max-w-3xl text-base leading-8 text-charcoal">Em là một người đam mê khám phá những tiềm năng của công nghệ và thế giới số. Định vị của em nằm ở sự kết hợp giữa tư duy logic dựa trên thực tế và sự sáng tạo không giới hạn. Em thích học hỏi cách các công cụ số vận hành, từ đó tìm cách tối ưu hóa chúng để tạo ra những sản phẩm sáng tạo, có thể chạm tới và mang lại giá trị cho người sử dụng.
+
+Portfolio này chính là cuốn nhật ký ghi lại hành trình em thử nghiệm, làm chủ các công cụ trong bộ môn Công nghệ số và AI, từng bước biến những kiến thức trên giảng đường thành sản phẩm thực tế.</p>
             <p className="mt-6 max-w-3xl text-base leading-8 text-charcoal">Portfolio này không chỉ là tập hợp các bài tập bộ môn Công nghệ số và AI, mà còn là cuốn nhật ký ghi lại hành trình em khám phá, làm chủ công nghệ và từng bước chuyển hóa lý thuyết thành những sản phẩm mang tới cho công chúng.</p>
           </div>
         </div>
